@@ -13,4 +13,4 @@ class Profile(models.Model):
     photo = models.ImageField(upload_to='user/%Y/%m/%d',blank=True)
 
     def __str__(self):
-        return '用户{}的配置文件'.format(settings.username)
+        return '用户{}的个人资料'.format(self.user.username)

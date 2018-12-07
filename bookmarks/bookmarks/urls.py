@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/',include('account.urls')),
-
+    path('social-auth/',include('social_django.urls',namespace='social')),
 ]
 # 这样设置后，Django开发服务器在DEBUG=True的情况下会提供媒体文件服务。
 if settings.DEBUG:

@@ -6,5 +6,5 @@
 
 {% block content %}
     <h1>仪表盘</h1>
-    <p>欢迎来到你的仪表板</p>
+    <p>欢迎来到你的仪表板。你可以<a href="{% url 'edit' %}">编辑个人资料</a>或者<a href="{% url 'password_change' %}">修改密码</a></p>
 {% endblock %}

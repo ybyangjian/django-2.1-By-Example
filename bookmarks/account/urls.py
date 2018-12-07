@@ -25,6 +25,9 @@ urlpatterns = [
 
     # 以上内置视图的URL用以下一行可以代替
     # path('',include('django.contrib.auth.urls')),
-
+    # 注册
     path('register/',views.register,name='register'),
+    # 编辑个人信息
+    path('edit/',views.edit,name='edit'),
+
 ]

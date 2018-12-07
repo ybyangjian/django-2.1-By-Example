@@ -25,7 +25,7 @@ SECRET_KEY = 'vfaw&(x(b=&d7dz9p35j!b-4w#im@jsl@ujl5+5l#2l4b(q8sb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # 第三方登录
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+# 添加自定义登录验证,会按照顺序进行验证
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.google.GoogleOAuth2'
+]
 
 
 # Internationalization
@@ -137,8 +144,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = '809127232@qq.com'
-EMAIL_HOST_PASSWORD = 'vqigynkdhkijbeji' # 授权码
-DEFAULT_FROM_EMAIL = '809127232@qq.com'
+EMAIL_HOST_USER = '发送邮箱'
+EMAIL_HOST_PASSWORD = '授权码' # 授权码
+DEFAULT_FROM_EMAIL = '发送邮箱（与EMAIL_HOST_USER一样）'
 # 与SMTP服务器通信时，是否启动TLS链接(安全链接)
 EMAIL_USE_TLS = True
+
+
+# 第三方登录
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '谷歌APIID' # API ID
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '谷歌密钥' # 密钥

@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
-        'USER':'postgres',
-        'PASSWORD':'yangjian'
+        'NAME': '数据库',
+        'USER':'用户名',
+        'PASSWORD':'密码'
     }
 }
 
@@ -140,8 +140,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = '809127232@qq.com'
-EMAIL_HOST_PASSWORD = 'vqigynkdhkijbeji' # 授权码
-DEFAULT_FROM_EMAIL = '809127232@qq.com'
-
-EMAIL_USE_TLS = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)
+EMAIL_HOST_USER = '发送邮箱'
+EMAIL_HOST_PASSWORD = '授权码' # 授权码
+DEFAULT_FROM_EMAIL = '发送邮箱（与EMAIL_HOST_USER一样）'
+# 与SMTP服务器通信时，是否启动TLS链接(安全链接)
+EMAIL_USE_TLS = True
