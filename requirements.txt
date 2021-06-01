@@ -17,5 +17,5 @@ six==1.11.0
 social-auth-app-django==2.1.0
 social-auth-core==1.7.0
 sorl-thumbnail==12.4.1
-urllib3==1.23
+urllib3==1.26.5
 view==0.1
